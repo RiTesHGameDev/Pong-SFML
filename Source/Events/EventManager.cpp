@@ -3,7 +3,7 @@
 
 namespace Events
 {
-	void EventManager::pollEvents(RenderWindow* game_window)
+	void EventManager::PollEvents(RenderWindow* game_window)
 	{
 		sf::Event event;
 		while (game_window->pollEvent(event))
@@ -13,23 +13,23 @@ namespace Events
 			{
 				game_window->close();
 			}
-			if (isKeyPressed(Keyboard::Escape))
+			if (IsKeyPressed(Keyboard::Escape))
 			{
 				game_window->close();
 			}
-			if (isLeftMouseButtonClicked())
+			if (IsLeftMouseButtonClicked())
 			{
 				Vector2i position = Mouse::getPosition(*game_window);
 				cout << "Left mouse cick at " << position.x << "," << position.y << endl;
 			}
 		}
 	}
-	bool EventManager::isKeyPressed(Keyboard::Key key)
+	bool EventManager::IsKeyPressed(Keyboard::Key key)
 	{
 		//Detect is a specific key is pressed
 		return Keyboard::isKeyPressed(key);
 	}
-	bool EventManager::isLeftMouseButtonClicked()
+	bool EventManager::IsLeftMouseButtonClicked()
 	{
 		//Detect if the left mouse button is pressed
 		return Mouse::isButtonPressed(Mouse::Left);

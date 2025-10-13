@@ -8,8 +8,8 @@ namespace Events
 {
 	class EventManager {
 	public:
-		void pollEvents(RenderWindow* game_window); //process all events
-		bool isKeyPressed(Keyboard::Key key); //check specific key
-		bool isLeftMouseButtonClicked();//check if mouse button clicked
+		void PollEvents(RenderWindow* game_window); //process all events
+		bool IsKeyPressed(Keyboard::Key key); //check specific key
+		bool IsLeftMouseButtonClicked();//check if mouse button clicked
 	};
 }
