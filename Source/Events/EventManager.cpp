@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../../Header/Events/EventManager.h"
 
 namespace Events
@@ -16,7 +17,11 @@ namespace Events
 			{
 				game_window->close();
 			}
-
+			if (isLeftMouseButtonClicked())
+			{
+				Vector2i position = Mouse::getPosition(*game_window);
+				cout << "Left mouse cick at " << position.x << "," << position.y << endl;
+			}
 		}
 	}
 	bool EventManager::isKeyPressed(Keyboard::Key key)
@@ -24,5 +29,9 @@ namespace Events
 		//Detect is a specific key is pressed
 		return Keyboard::isKeyPressed(key);
 	}
-	
+	bool EventManager::isLeftMouseButtonClicked()
+	{
+		//Detect if the left mouse button is pressed
+		return Mouse::isButtonPressed(Mouse::Left);
+	}
 }
