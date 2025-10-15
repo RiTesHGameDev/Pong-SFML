@@ -4,9 +4,10 @@ using namespace sf;
 
 namespace Gameplay
 {
-	GameplayManager::GameplayManager()
+	GameplayManager::GameplayManager(EventManager* manager)
 	{
 		Initialize();
+		event_manager = manager;
 	}
 	void GameplayManager::Initialize()
 	{
@@ -19,5 +20,15 @@ namespace Gameplay
 		ball->Render(game_window);
 		player1->Render(game_window);
 		player2->Render(game_window);
+	}
+	void GameplayManager::Update()
+	{
+		ball->Update();
+
+		player1->Update(event_manager->IsKeyPressed(Keyboard::W),
+			event_manager->IsKeyPressed(Keyboard::S));
+
+		player2->Update(event_manager->IsKeyPressed(Keyboard::Up),
+			event_manager->IsKeyPressed(Keyboard::Down));
 	}
 }

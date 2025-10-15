@@ -11,7 +11,7 @@ namespace Core {
 	void GameWindowManager::CreateGameWindow()
 	{
 		//Create the window with specific dimensions and title
-		game_window->create(VideoMode::getDesktopMode(), game_title,Style::Default);
+		game_window->create(VideoMode(game_window_width,game_window_height), game_title, Style::Default);
 	}
 	bool GameWindowManager::IsGameRunning()
 	{
