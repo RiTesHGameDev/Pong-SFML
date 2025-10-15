@@ -23,6 +23,7 @@ namespace Gameplay
 		{
 			throw runtime_error("Failed to load ball texture!");
 		}
+		pong_ball_texture.setSmooth(true);
 	}
 	void Ball::InitializeVariables()
 	{
