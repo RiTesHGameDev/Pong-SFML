@@ -15,8 +15,8 @@ namespace Gameplay
 
 		const float paddle_speed = 0.5f;
 
-		const float scale_x = 0.05f;
-		const float scale_y = 1.0f;
+		const float scale_x = 0.03f;
+		const float scale_y = 0.8f;
 
 		void LoadTexture();
 		void InitializeVariables(float position_x, float position_y);
