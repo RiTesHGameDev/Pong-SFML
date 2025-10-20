@@ -3,16 +3,19 @@
 #include "../Gameplay/Paddle.h"
 #include "../../Header/Events/EventManager.h"
 #include "../../Header/Boundaries/Boundary.h"
+#include "../../Header/Utility/TimeService.h"
 
 using namespace sf;
 using namespace Events;
 using namespace Boundaries;
+using namespace Utility;
 
 namespace Gameplay
 {
 	class GameplayManager
 	{
 	private:
+		TimeService* time_service;
 		EventManager* event_manager;
 		float player1_position_x = 40.0f;
 		float player1_position_y = 300.0f;
