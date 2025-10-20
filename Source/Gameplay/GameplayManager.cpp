@@ -4,6 +4,8 @@ namespace Gameplay
 {
 	GameplayManager::GameplayManager(EventManager* manager)
 	{
+		time_service = new TimeService();
+		time_service->Initialize();
 		Initialize();
 		event_manager = manager;
 	}
@@ -23,12 +25,14 @@ namespace Gameplay
 	}
 	void GameplayManager::Update()
 	{
-		ball->Update(player1,player2);
+		time_service->Update();
+
+		ball->Update(player1,player2,time_service);
 
 		player1->Update(event_manager->IsKeyPressed(Keyboard::W),
-			event_manager->IsKeyPressed(Keyboard::S));
+			event_manager->IsKeyPressed(Keyboard::S),time_service);
 
 		player2->Update(event_manager->IsKeyPressed(Keyboard::Up),
-			event_manager->IsKeyPressed(Keyboard::Down));
+			event_manager->IsKeyPressed(Keyboard::Down),time_service);
 	}
 }

@@ -9,9 +9,11 @@ namespace Utility
 	}
 	float TimeService::CalculateDeltaTime()
 	{
-		int delta = chrono::duration_cast<chrono::microseconds>
-			(chrono::steady_clock::now() - previous_time).count();
-		return static_cast<float>(delta) / 1000000.0f;
+		auto now = chrono::steady_clock::now();
+		auto time_diff = now - previous_time;
+		previous_time = now;
+		auto delta_seconds = chrono::duration_cast<chrono::duration<float>>(time_diff);
+		return delta_seconds.count();
 	}
 	void TimeService::UpdateDeltaTime()
 	{
