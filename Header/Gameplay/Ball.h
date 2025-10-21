@@ -2,10 +2,12 @@
 #include <SFML/Graphics.hpp>
 #include "../../Header/Gameplay/Paddle.h"
 #include "../../Header/Utility/TimeService.h"
+#include "../../Header/Sounds/SoundManager.h"
 
 using namespace sf;
 using namespace std;
 using namespace Utility;
+using namespace Sounds;
 
 namespace Gameplay
 {
