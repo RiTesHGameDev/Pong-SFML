@@ -31,12 +31,12 @@ namespace UI
 		void CreateLeftScoreText();
 		void CreateRightScoreText();
 		string FormatScore(int score);
-		void IncrementPlayer1Score();
-		void IncrementPlayer2Score();
-
+		
 	public:
 		UIService();
 		void Render(RenderWindow* game_window);
+		void IncrementPlayer1Score();
+		void IncrementPlayer2Score();
 		void Update();
 	};
 }

@@ -42,6 +42,9 @@ namespace Gameplay
 		float elapsed_delay_time = 0.0f;
 		float delay_duration = 2.0f;
 
+		bool had_left_collision = false;
+		bool had_right_collision = false;
+
 		Vector2f velocity = Vector2f(ball_speed, ball_speed);
 
 		BallState current_state;
@@ -55,10 +58,18 @@ namespace Gameplay
 		Ball();
 		void Update(Paddle* player1,Paddle* player2,TimeService* time_service);
 		void Render(RenderWindow* game_window);
+
 		void HandlePaddleCollision(Paddle* player1, Paddle* player2);
 		void HandleBoundaryCollision();
 		void HandleOutOfBoundCollision();
+
 		void Oncollision(Paddle* player1,Paddle* player2);
 		void Reset();
+
+		bool IsLeftCollisionOccured();
+		void UpdateLeftCollisionState(bool value);
+
+		bool IsRightCollisionOccured();
+		void UpdateRightCollisionState(bool value);
 	};
 }
