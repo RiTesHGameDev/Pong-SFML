@@ -28,6 +28,6 @@ namespace Sounds
 	public:
 		static void Initialize();
 		static void PlaySoundEffect(SoundType sound_type);
-		static void PlayBackgroudMusic();
+		static void PlayBackgroundMusic();
 	};
 }
