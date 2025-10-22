@@ -22,7 +22,7 @@ namespace Sounds
 		static const string bgm_path;
 		static const string ball_bounce_path;
 
-		
+
 		static void LoadSoundFromFile();
 
 	public:
