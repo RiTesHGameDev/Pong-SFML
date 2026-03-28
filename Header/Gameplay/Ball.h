@@ -2,10 +2,12 @@
 #include <SFML/Graphics.hpp>
 #include "../../Header/Gameplay/Paddle.h"
 #include "../../Header/Utility/TimeService.h"
+#include "../../Header/Sounds/SoundManager.h"
 
 using namespace sf;
 using namespace std;
 using namespace Utility;
+using namespace Sounds;
 
 namespace Gameplay
 {
@@ -36,7 +38,7 @@ namespace Gameplay
 		const float center_position_x = 615.0f;
 		const float center_position_y = 325.0f;
 
-		float ball_speed = 100.0f;
+		float ball_speed = 80.0f;
 		float speed_multiplier = 10.0f;
 
 		float elapsed_delay_time = 0.0f;

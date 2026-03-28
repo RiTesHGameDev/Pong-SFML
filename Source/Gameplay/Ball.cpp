@@ -64,10 +64,12 @@ namespace Gameplay
 		if (ball_bounds.intersects(player1_bounds) && velocity.x < 0)
 		{
 			velocity.x = -velocity.x;
+			SoundManager::PlaySoundEffect(SoundType::BALL_BOUNCE);
 		}
 		if (ball_bounds.intersects(player2_bounds) && velocity.x > 0)
 		{
 			velocity.x = -velocity.x;
+			SoundManager::PlaySoundEffect(SoundType::BALL_BOUNCE);
 		}
 	}
 	void Ball::HandleBoundaryCollision()

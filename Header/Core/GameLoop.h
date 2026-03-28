@@ -3,12 +3,14 @@
 #include "../Core/GameWindowManager.h"
 #include "../Events/EventManager.h"
 #include "../Gameplay/GameplayManager.h"
+#include "../Sounds/SoundManager.h"
 
 using namespace sf;
 using namespace std;
 using namespace Core;
 using namespace Events;
 using namespace Gameplay;
+using namespace Sounds;
 
 namespace Core
 {
